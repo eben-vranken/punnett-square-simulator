@@ -11,5 +11,7 @@ def parse_args():
 if __name__ == "__main__":
     args = parse_args()
 
-    print(args.p1)
-    print(args.p2)
+    if args.p1.upper() != args.p2.upper():
+        print("Parent genotypes are not of the same type.\nInput a monohybrid cross.")
+        exit(1)
+    
