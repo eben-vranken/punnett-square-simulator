@@ -20,4 +20,7 @@ if __name__ == "__main__":
         print("Parent genotypes are not of the same type.\nInput a monohybrid cross.")
         exit(1)
     
-    simulator.calculate(args.p1, args.p2)
+    allele_p1, allele_p2 = simulator.split_allele(args.p1, args.p2)
+    punnett_square = simulator.calculate(allele_p1, allele_p2)
+
+    simulator.print_punnett_cross(punnett_square, allele_p1, allele_p2)
