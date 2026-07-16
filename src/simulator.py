@@ -75,7 +75,7 @@ def print_punnett_cross(punnett_square, row_headers, col_headers):
 
 def print_probabilities(probabilities):
     print(f"{"Genotype":<10} | {"Probability":<10}")
-    print("-" * 43)
+    print("-" * 24)
     for key, value in probabilities.items():
         percent = str(value * 100) + "%"
         print(f"{str(key):<10} | {percent:<10}")

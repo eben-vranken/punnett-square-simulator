@@ -45,7 +45,7 @@ python punnet-square.py Aa Aa -g -p
 │ a  │ Aa │ aa │
 └────┴────┴────┘
 Genotype   | Probability
--------------------------------------------
+------------------------
 AA         | 25.0%
 Aa         | 50.0%
 aa         | 25.0%
