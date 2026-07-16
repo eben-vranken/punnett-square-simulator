@@ -22,6 +22,25 @@ def calculate(allele_p1, allele_p2):
 
     return punnett_square
 
+def calculate_probabilities(punnett_square):
+    total = len(punnett_square) ** 2
+
+    counts = {}
+
+    for row in punnett_square:
+        for gene in row:
+            if gene in counts:
+                counts[gene] += 1
+            else:
+                counts[gene] = 1
+        
+    probabilities = {}
+
+    for count in counts:
+        probabilities[count] = counts[count] / total
+
+    return probabilities
+
 def print_punnett_cross(punnett_square, row_headers, col_headers):
     rows = len(punnett_square)
     cols = len(punnett_square[0]) if rows else 0
@@ -53,3 +72,10 @@ def print_punnett_cross(punnett_square, row_headers, col_headers):
         if i < rows - 1:
             print(header_div)
     print(bottom)
+
+def print_probabilities(probabilities):
+    print(f"{"Genotype":<10} | {"Probability":<10}")
+    print("-" * 43)
+    for key, value in probabilities.items():
+        percent = str(value * 100) + "%"
+        print(f"{str(key):<10} | {percent:<10}")
