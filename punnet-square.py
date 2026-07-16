@@ -1,4 +1,5 @@
 from argparse import ArgumentParser
+from src import simulator
 
 def parse_args():
     parser = ArgumentParser()
@@ -19,3 +20,4 @@ if __name__ == "__main__":
         print("Parent genotypes are not of the same type.\nInput a monohybrid cross.")
         exit(1)
     
+    simulator.calculate(args.p1, args.p2)
